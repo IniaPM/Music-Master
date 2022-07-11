@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c583041e.css",
+    "main.js": "/static/js/main.8520571d.js",
+    "static/media/roboto-condensed.light.ttf": "/static/media/roboto-condensed.light.d9e440de777389435df7.ttf",
+    "static/media/economica-bold.ttf": "/static/media/economica-bold.ce99c17a86c8c9ef7b81.ttf",
+    "index.html": "/index.html",
+    "main.c583041e.css.map": "/static/css/main.c583041e.css.map",
+    "main.8520571d.js.map": "/static/js/main.8520571d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c583041e.css",
+    "static/js/main.8520571d.js"
+  ]
+}
