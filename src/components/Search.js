@@ -1,34 +1,32 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
-class Search extends Component {
-    state = { artistQuery: '' };
+function Search(props) {
+	const [state, setState] = useState({ artistQuery: '' });
 
-    updateArtistQuery = (event) => {
-        setState({ artistQuery: event.target.value });
-    }
-    
-    handleKeyPress = (event) => {
-        if (event.key === "Enter") {
-          searchArtist();
-        }
-    }
+	const searchArtist = () => {
+		props.searchArtist(state.artistQuery);
+	};
 
-    searchArtist = () => {
-      this.props.searchArtist(this.state.artistQuery);  
-    }
+	const handleUpdateArtistQuery = (event) => {
+		setState({ artistQuery: event.target.value });
+	};
 
-    render() {
-        return (
-            <div>
-              <input
-                onChange={updateArtistQuery}
-                onKeyPress={handleKeyPress}
-                placeholder="Search for an Artist"
-                />
-                <button onClick={searchArtist}>Search</button>  
-            </div>
-        )
-    }
+	const handleKeyPress = (event) => {
+		if (event.key === 'Enter') {
+			props.searchArtist();
+		}
+	};
+
+	return (
+		<div>
+			<input
+				onChange={handleUpdateArtistQuery}
+				onKeyPress={handleKeyPress}
+				placeholder="Search for an Artist"
+			/>
+			<button onClick={searchArtist}>Search</button>
+		</div>
+	);
 }
 
 export default Search;
